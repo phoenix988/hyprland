@@ -219,7 +219,7 @@ my dmenu scripts with the alt key
 |-------------------+---------------------|
 | SUPER + Q         | Kill window         |
 | SUPER + F         | Fullscreen a window |
-| SUPER + SHIFT + Q | Quit qtile          |
+| SUPER + SHIFT + Q | Quit Hyprland       |
 | SUPER + M         | Logout Meny         |
 | SUPER + R         | Run menu            |
 | F1                | Help menu kitty     |
