@@ -8,6 +8,7 @@
 - [[About My Hyprland][ABOUT MY HYPRLAND]]
   - [[IMPORTANT KEYBINDINGS]]
   - [[CONFIGS YOU NEED]]
+- [[SOURCE]]
 - [[CURSOR]]
   - [[SIZE]]
   - [[SENSITIVITY]]
@@ -82,6 +83,14 @@ need to customize my config
 + Swayshot  (For screenshots)
 + Waybar (For the bar)
 
+
+*** SOURCE
+#+begin_src conf :tangle hyprland.conf
+
+source=~/.config/hypr/themes/rose-pine.conf
+
+#+end_src
+
 *** CURSOR
 Here you can configure mouse settings
 Like size and sensetivity like I have in my config
@@ -110,12 +119,15 @@ general {
     border_size = 2
 
     # Blue border
-    #col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
+    # col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
 
     # Purple Border
-    col.active_border = rgba(9930ff99) rgba(5560ff90) 45deg
+    # col.active_border = rgba(9930ff99) rgba(5560ff90) 45deg
 
-    col.inactive_border = rgba(595959aa)
+    col.active_border = $rose $pine 90deg
+
+    col.inactive_border = $muted
+
     layout = dwindle
 }
 #+end_src
