@@ -25,8 +25,8 @@
   - [[RUN SCRIPTS]]
   - [[TMUX]]
   - [[MEDIA CONTROL]]
-- [[WINDOW Rules]]
-- [[WORKSPACE Rules]]
+- [[WINDOWRULES]]
+- [[WORKSPACERULES]]
 
 
 ** ABOUT MY HYPRLAND
@@ -470,7 +470,7 @@ bind = , XF86AudioRaiseVolume, exec, $script_path/activated/volume-up.sh       #
 #END_KEYS
 #+end_src
 
-*** Windowrule
+*** WINDOWRULES
 Here you can configure window rules like if you want them to float for example.
 Or if you want to open a program on a specific workspace. You can do all those rules here
 #+begin_src conf :tangle hyprland.conf
@@ -495,7 +495,7 @@ windowrulev2 = workspace 3, class:^(?!.*(lutris)).*(org.kde.kdenlive).*$
 
 #+end_src
 
-*** Workspace Rules
+*** WORKSPACE RULES
 Since hyprland doesn't really share workspaces accross monitors.
 I decided to give 5 workspaces to each monitor I use. Since I always
 want the same workspace to appear in the same monitor otherwise I get confused.
