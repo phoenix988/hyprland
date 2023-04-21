@@ -37,6 +37,10 @@ you will need some additonal software, like wofi,swaybg,grim waybar etc.
 Also the terminal in this config is kitty so make sure to change that to your
 prefered terminal so you can open a terminal in this windowmanager.
 
+
+[[https://raw.githubusercontent.com/phoenix988/phoenix988/main/images/hyprland-desktop.png][HYPRLAND DESKTOP]]
+
+
 *** IMPORTANT KEYBINDINGS
 This is just a quick recap of one of the most important
 keybindings to know in order to use this config.
