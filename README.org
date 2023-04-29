@@ -7,8 +7,8 @@
 * TABLE OF CONTENT
 - [[About My Hyprland][ABOUT MY HYPRLAND]]
   - [[CONFIGS YOU NEED]]
-  - [[IMPORTANT KEYBINDINGS]]
     - [[INSTALLATION]]
+  - [[IMPORTANT KEYBINDINGS]]
 - [[SOURCE]]
 - [[CURSOR]]
   - [[SIZE]]
@@ -50,7 +50,7 @@ your prefered software but then you need to customize my config.
 + Waybar (For the bar)
 + Wofi (Run launcher)
 
-**** INSTALLATION    ****
+**** INSTALLATION
 Install all the packages I need to get started with this config
 #+begin_src sh
 
