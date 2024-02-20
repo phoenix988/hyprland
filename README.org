@@ -55,8 +55,9 @@ Install all the packages I need to get started with this config
 #+begin_src sh
 
 # I'm using paru but feel free to use any aur helper if you are on arch
- paru -S --needed --noconfirm waybar-hyprland-git hyprland swaylock swaybg grim wofi kitty lxappearance qt5ct qt6ct kvantum awesome-terminal-fonts adobe-source-code-pro-fonts ttf-jetbrains-mono \
- ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-iosevka-nerd
+ paru -S --needed --noconfirm waybar-hyprland-git hyprland swaylock swayshot swaybg grim wofi kitty lxappearance qt5ct qt6ct kvantum awesome-terminal-fonts adobe-source-code-pro-fonts ttf-jetbrains-mono \
+ ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-iosevka-nerd pyprland xdg-desktop-portal-wlr
+
 
 # Clones my repository
 git clone https://github.com/phoenix988/hyprland.git $HOME/.config/hypr
@@ -119,7 +120,7 @@ then you will have no problem to get around in my Hyprland.
 Here I am sourcing some additonal config files
 #+begin_src conf :tangle hyprland.conf
 # Sourcing some rose-pine colors
-source=~/.config/hypr/themes/rose-pine.conf
+source=~/.config/hypr/themes/nord.conf
 #+end_src
 
 *** CURSOR
@@ -144,9 +145,9 @@ And set default layout. I prefer dwindle layout
 general {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-    gaps_in = 3
-    gaps_out = 10
-    border_size = 3
+    gaps_in = 6
+    gaps_out = 12
+    border_size = 4
 
     # Blue border
     # col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
@@ -276,6 +277,7 @@ $mainMod = SUPER
 $browser1 = qutebrowser
 $browser2 = librewolf
 $term = kitty -e tmux attach
+$term_normal = kitty
 $script_path = $HOME/.scripts
 
 
@@ -302,15 +304,15 @@ bind = CTRL ALT, L, exec, $script_path/activated/swaylock      # Lock the screen
 **** SOFTWARE
 Bindings to open various software I use.
 
-| Keybinding            | DESCRIPTION                   |
-|-----------------------+-------------------------------|
-| SUPER + G             | Gimp                          |
-| SUPER + O             | OBS                           |
-| SUPER + B             | Browser1                      |
-| SUPER + I             | lxappearance                  |
-| SUPER + S             | Take Screenshot               |
-| SUPER + T             | Terminal                      |
-| SUPER + Enter         | Terminal                      |
+| Keybinding    | DESCRIPTION     |
+|---------------+-----------------|
+| SUPER + G     | Gimp            |
+| SUPER + O     | OBS             |
+| SUPER + B     | Browser1        |
+| SUPER + I     | lxappearance    |
+| SUPER + S     | Take Screenshot |
+| SUPER + T     | Terminal        |
+| SUPER + Enter | Terminal        |
 
 
 | Keybinding            | DESCRIPTION                   |
@@ -334,9 +336,9 @@ Bindings to open various software I use.
 
 | Keybinding | DESCRIPTION    |
 |------------+----------------|
+| F3         | Sync script    |
 | F11        | Restart Waybar |
 | F12        | Set random bg  |
-| F3         | Sync script    |
 
 #+begin_src conf :tangle hyprland.conf
 # Launch programs Mod + key
@@ -345,7 +347,7 @@ bind = $mainMod, O, exec, obs                                                   
 bind = $mainMod, B, exec, $browser1                                                      # Launch browser1
 bind = $mainMod, I, exec, lxappearance                                                   # Launch lxappearance
 bind = $mainMod, S, exec, grim -g "$(slurp)" - | wl-copy                                 # Take screenshot
-bind = $mainMod, T, exec, $term                                                          # Open the terminal
+bind = $mainMod, T, exec, $term_normal                                                   # Open the terminal
 bind = $mainMod, return, exec, $term                                                     # Open the terminal
 
 
@@ -464,11 +466,10 @@ bind = $mainMod SHIFT, 0, movetoworkspace, 10          # Move window to workspac
 # Scroll through existing workspaces with mainMod + scroll
 bind = $mainMod, E, workspace, e+1                     # Scroll through all the workspaces forward
 bind = $mainMod, W, workspace, e-1                     # Scroll through all the workspaces backwards
-
 #+END_SRC
 
 **** RUN SCRIPTS
-My various run scripts that I find very useful.
+My various dmenu scripts that I find very useful.
 
 | keybinding | description                                  |
 |------------+----------------------------------------------|
@@ -580,12 +581,8 @@ windowrulev2 = workspace 5, class:^(?!.*(lutris)).*(org.kde.kdenlive).*$
 #+end_src
 
 *** WORKSPACE RULES
-Since hyprland doesn't really share workspaces accross monitors.
-I decided to give 5 workspaces to each monitor I use. Since I always
-want the same workspace to appear on the same monitor otherwise I get confused.
-One thing I miss from qtile is that the monitors share workspaces. You can kinda
-get the same effect in hyprland but it works a bit diffrent. The workflow took
-some getting used to but I really enjoy it.
+Here you can customize workspace rules.
+For example you can lock a workspace to a specific monitor
 #+begin_src conf :tangle hyprland.conf
 # workspace=1,monitor:DP-1
 # workspace=2,monitor:DP-1
