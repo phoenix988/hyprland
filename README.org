@@ -380,7 +380,7 @@ bind = , F3, exec,  $script_path/sync/sync-script                             # 
 
 # Scratch pads
 bind = $mainMod,N,exec,pypr toggle term
-bind = $mainMod SHIFT,,exec,pypr toggle volume
+bind = $mainMod SHIFT,U,exec,pypr toggle file
 
 #+END_SRC
 
